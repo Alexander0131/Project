@@ -1,0 +1,136 @@
+
+
+
+
+
+
+$transa: rgb(0,0,0,0.5);
+$transb: rgb(0,0,0,0.7);
+$primary: orangered;
+$secondary: #003049;
+$lightSec: #76737c;
+$lightPri: #fcbf49;
+$gen: #c0786a;
+$white: var(--white);
+$black: #000;
+svg{
+color: red;
+}
+.caps{
+    text-transform: capitalize;
+}
+.newPage, .sider{
+    h2{
+        text-transform: capitalize;
+    }
+    
+    .popup{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgb(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .main-pop{
+            background-color: $white;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            padding: 7px;
+            border-radius: 10px;
+            max-width: 350px;
+
+            div{
+                text-align: center;
+            }
+           
+
+            button{
+                margin: 5px;
+                padding: 7px;
+                box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.4);
+                border-radius: 5px;
+                border: 2px solid $white;
+                font-weight: 600;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: $secondary;
+                border: 2px solid $secondary;
+                color: $white;
+
+                }
+            }
+        }
+    }
+    .popup.hide{
+        display: none;
+    }
+    .iconCat{
+        width: fit-content;
+        margin: 0;
+        padding: 0;
+
+        .icon.blue{
+            color: #123456;
+            font-size: 25px;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.siteHealth{
+    width: 100%;
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        b{
+            width: 100px;
+        }
+        .wrapper{
+            background-color: #76737c;
+            width: 75%;
+            height: 6px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex: 1;
+
+            .inner{
+                background-color: dodgerblue;
+                height: 6px;
+                border-radius: 10px;
+                transition: 2s ease;
+            }
+           .inner.red{
+            background: red;
+           }
+
+        }
+    }
+        .circle{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+
+            .circleChild{
+                width: 50%;
+            }
+        }
+}
+#flex{
+    display: flex;
+    position: relative;
+}

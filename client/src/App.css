@@ -1,0 +1,21 @@
+*{
+    outline: none;
+    border: none;
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
+    
+}
+a{
+    text-decoration: none;
+}
+body.dark a{
+    color: #efefef;
+}
+

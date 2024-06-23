@@ -1,0 +1,271 @@
+
+$transa: rgb(0,0,0,0.5);
+$transb: rgb(0,0,0,0.7);
+$primary: orangered;
+$secondary: #003049;
+$lightSec: #76737c;
+$lightPri: #fcbf49;
+$gen: #c0786a;
+$white: var(--white);
+$black: var(--bla);
+
+
+.edittingPage, .newPage{
+    .editor{
+        display: flex;
+        position: relative;
+        margin: 5px;
+        gap: 10px;
+        border-radius: 10px;
+        padding: 5px;
+        border: 0.5px solid grey;
+        width: 100%;
+        overflow: hidden;
+
+        &:nth-child(n){
+        border: 0.5px solid grey;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin-top: 50px;
+            @media screen and (min-width: 767px) {
+                
+                width: 50%;
+            }
+            @media screen and (max-width: 767px) {
+                width: 100%;
+            }
+        }
+            h2{
+                margin: 0;
+            }
+        .inp{
+            border: 1px solid $secondary;
+            margin:0 10px 10px 0;
+            padding: 7px;
+            border-radius: 5px;
+        }
+.inputTitleErr{
+    border: 1px solid red;
+    margin:0 10px 10px 0;
+    padding: 7px;
+    border-radius: 5px;
+
+}
+
+.iconCat{
+position: absolute;
+top: 5px;
+left: 5px;
+}
+        }
+        
+        
+        .imgEdit{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-height: 220px;
+            margin: 0 0 10px;
+            img, .img{
+                width: 200px;
+                max-height: 215px;
+                border-radius: 15px;
+                border-radius: 2px solid grey;
+                border: 2px solid grey;
+                padding: 5px;
+            }
+            .imgFalse{
+                border: 1px solid red;
+
+            }
+        }
+            
+            .label{
+                background-color: $secondary;
+                color: #fff;
+                font-size: 13px;
+                padding: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: $primary;
+                }
+            }
+        .quil{
+            // overflow: hidden;
+            // height: fit-content;
+            width: 95%;
+            margin: 5px;
+
+
+
+           
+
+            .quillBody{
+                width: 100%;
+                max-width: 600px;
+                border-radius: 10px;
+                overflow: hidden;
+                margin-right: 20px;
+                padding: 0;
+                border: 1px solid grey;
+            }
+            .quillBody.false{
+                border: 1px solid red;
+            }
+
+            .sub{
+                background-color: $secondary;
+                color: #fff;
+                font-size: 13px;
+                padding: 5px;
+                border-radius: 5px;
+                margin-top: 5px;
+                float: right;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: $primary;
+                cursor: pointer;
+
+                }
+            }
+            .sub.dim{
+                opacity: 0.6;
+
+                &:hover
+                {
+                    background-color: $secondary;
+                    cursor: not-allowed;
+
+                }
+            }
+        }
+        
+        .previewWrap{
+            @media screen and (min-width:767px) {
+                
+                width: 48%;
+            }
+            .wrap{
+                display: flex;
+                justify-content: 
+                space-between;
+                border-right: 0.2px solid grey;
+                border-bottom: 0.2px solid grey;
+                gap: 10px;
+                border-radius:10px;
+                position: relative;
+                padding-right: 10px;
+                
+        img{
+            max-height: 150px;
+                width: 30%;
+                min-width: 200px;
+                // border: 0.2px solid grey;
+                border-radius: 5px 0 0 5px;
+        }
+        .text{
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-bottom: 20px;
+            word-break: break-all;
+            flex: 1;
+            p{
+                margin: 0;
+            }
+        }
+            button{
+            height: 30px;
+            position: absolute;
+            bottom: -15px;
+            border-left: 2px solid $primary;
+            border-top: 2px solid $primary;
+            right: -8px;
+            background-color: $white;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px grey;
+            a{
+                color: #000;
+            }
+        }
+    }
+}
+}
+}
+    .single-wrap{
+    margin-bottom: 30px;
+    max-width: 800px;
+    overflow: hidden;
+
+    .title{
+        margin: 0;
+        h3{
+            text-decoration: underline;
+            margin: 0;
+            font-size: 25px;
+            text-transform: capitalize;
+
+        }
+        sup{
+            font-size: 10px;
+            text-align: left;
+        }
+        
+    }.content-wrap{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 97%;
+        img{
+            max-width: 400px;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid grey;
+        }
+        p{
+            width: 90%;
+            word-break: break-all;
+            
+        }
+    
+}
+}
+    @media screen and (max-width : 767px) {
+        .editor{
+            flex-direction: column;
+            // gap: 50px;
+        }
+    }
+
+
+.double-wrap{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid grey;
+    overflow: hidden;
+
+
+    h3{
+        margin: 0;
+        padding: 0;
+    }
+
+    img{
+        width: 80%;
+        max-width: 450px;
+    }
+    sup{
+        font-size: 10px;
+        text-align: left;
+    }
+    
+}

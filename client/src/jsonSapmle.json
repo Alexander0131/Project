@@ -1,0 +1,122 @@
+[
+    {
+    "title": "sublink",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "child",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "grandChild",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "feed",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "about",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "service",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "gallery",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "patner",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "social",
+    "desc":"",
+    "cat": "static",
+    "link": ["https://www.facebook.com/DeFexEngConstLtd", "024-409-2667", "https://gh.linkedin.com/in/de-fex-engineering-65008988"],
+    "sec": 0
+},
+{
+    "title": "locat",
+    "desc":"",
+    "cat": "static",
+    "link": ["Adjacent Hotel de Hilda, Behind Health Plus Clinic, Tamso Estate, Tarkwa."],
+    "sec": 0
+},
+{
+    "title": "numbers",
+    "desc":"",
+    "cat": "static",
+    "link": ["0244-092-667", "0244-255-245", " "],
+    "sec": 0
+},
+{
+    "title": "logo",
+    "desc":"",
+    "cat": "static",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "swiper",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+{
+    "title": "board",
+    "desc":"",
+    "cat": "encap",
+    "link": [],
+    "sec": 0
+},
+
+{
+    "title": "welcomeText",
+    "desc":"",
+    "cat": "static",
+    "link": ["Here Goes the title", "Here is the Text"],
+    "sec": 0
+},
+{
+    "title": "email",
+    "desc":"",
+    "cat": "static",
+    "link": ["exampldefex@gmail.com"],
+    "sec": 0
+},
+{
+    "title": "Defex Manager",
+    "desc":"accOne",
+    "cat": "account",
+    "link": ["password", true],
+    "sec": 1
+}
+]

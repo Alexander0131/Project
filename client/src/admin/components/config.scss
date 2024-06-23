@@ -1,0 +1,175 @@
+$transa: rgb(0,0,0,0.5);
+$transb: rgb(0,0,0,0.7);
+$primary: orangered;
+$secondary: #003049;
+$lightSec: #76737c;
+$lightPri: #fcbf49;
+$gen: #c0786a;
+$white: #fff;
+$black: #000;
+
+.config-page{
+  .config{
+      border: 0.5px solid gray;
+      margin: 5px;
+    padding: 5px;
+    width: 97%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .popup{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(225, 225, 225, 0.2);
+        backdrop-filter: blur(2px);
+        
+        .main-pop{
+            background-color: $white;
+            padding: 10px;
+            box-shadow: 5px 5px 50px grey;
+            border-radius: 10px;
+            
+            div{
+                display: flex;
+                padding: 10px;
+                justify-content: space-around;
+                button{
+                    box-shadow: 5px 5px 20px grey;
+                    padding: 10px;
+                    border-radius: 5px;
+
+                &:hover{
+                    background-color: $primary;
+                    color: #fff;
+                }
+                }
+            }
+        }
+    }
+
+    .popup.hide{
+        display: none;
+    }
+
+      h3{
+        color:grey;
+        text-decoration: underline;
+      }
+      .imgEdit{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        max-height: 220px;
+        margin: 0 0 10px;
+        img, .img{
+            width: 200px;
+            max-height: 215px;
+            border-radius: 15px;
+            border-radius: 2px solid grey;
+            border: 2px solid grey;
+            padding: 5px;
+        }
+        .imgFalse{
+            border: 1px solid red;
+
+        }
+    }
+        
+        .label{
+            background-color: $secondary;
+            color: #fff;
+            font-size: 13px;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: $primary;
+            }
+        }
+        .wrap-All{
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: 5px 5px 50px rgb(37, 31, 73);
+            padding: 10px;
+        max-width: 700px;
+        border-radius: 15px;
+            // width: 100%;
+        // background-color: red;
+
+
+           
+            div{
+
+                input{
+                    box-shadow: inset 1px 1px 3px grey;
+                    margin: 5px;
+                    padding: 5px;
+                    border-radius: 10px;
+                }
+    
+                display: flex;
+                justify-content: center;
+                // flex-direction: row;
+                
+            }
+
+            .loc{ 
+                display: flex;
+                align-items: center;
+                width: 90%;
+                flex-direction: row;
+                margin-bottom: 10px;
+                label{
+                    flex: 1px;
+                }
+                input{
+                    width: 70%;
+                    box-shadow: inset 1px 1px 3px grey;
+                    margin: 5px;
+                    padding: 5px;
+                    border-radius: 10px;
+                }
+
+            }
+            .social{
+                display: flex;
+                flex-direction: column;
+
+                b{
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 10px;
+                    align-items: center;
+                    label{
+                        flex: 1;
+                    }
+                    input{
+                        width: 70%;
+                    }
+                  
+
+                }
+            }
+            button{
+                color: $white;
+                background-color: $secondary;
+                border-radius: 5px;
+                padding: 5px;
+            }
+        }
+    .red{
+        border: 1px solid red;
+    }
+  } 
+}
