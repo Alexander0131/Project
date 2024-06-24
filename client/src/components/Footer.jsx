@@ -4,6 +4,7 @@ import { BsHeadset, BsFacebook, BsTwitter, BsWhatsapp, BsLinkedin } from 'react-
 import {doc} from '../doc'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import  MiniLoading from '../admin/components/MiniLoad'
 import { fetchStatic } from '../postDb'
 
 function Footer() {
@@ -12,6 +13,8 @@ function Footer() {
 
     const [posts, setPosts] = useState();
     const [loc, setLoc] = useState("");
+    const [loaded, setLoaded] = useState(false);
+
       const [soc, setSoc] = useState({
       fb: "",
       wa: "",
@@ -37,11 +40,16 @@ function Footer() {
       handleFetchData();
     }, []);
   return (
-    <footer>
+    <div>
+      <div className="loaderdiv">
+        {posts ? null : <MiniLoading/>}
+      </div>
+        <footer>
        <div className="footer">
         <div className='company'>
             <img src={logo} alt="defex"/>
         </div>
+
         <div className="contAbt">
 
         <div>
@@ -81,7 +89,8 @@ function Footer() {
             <div className='allright'><i>
                AllRight Reserved {year} </i></div>
 
-    </footer>
+        </footer>
+    </div>
   )
 }
 

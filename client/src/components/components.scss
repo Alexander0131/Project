@@ -16,6 +16,10 @@ $white: var(--white);
 $black: var(--bla);
 $blue: var(--blue);
 
+.wrapHome{
+    width: 100%;
+    overflow: hidden;
+}
 input{
     background-color: transparent;
     color: $black;
@@ -32,6 +36,8 @@ a:hover{
 }
 
 //Header component starts
+
+
 
 .overall-wrap{
     position: relative;
@@ -622,7 +628,7 @@ a:hover{
                 .swiperHead{
                     .mySwiper{
                         .swiperSlide{
-                height: 380px;
+                height: 230px;
                 width: 100%;
                             margin-top: -10vh;
                         }
@@ -818,15 +824,15 @@ a:hover{
 // Feed hom styles
 
 .feedHome, .subLink-wrap{
+    // width: 95%;
     .feedMap{
-
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin: 10px;
-        width: 300px;
+        min-width: 200px;
         border-radius: 5px;
-        width: 100%;
+        width: 90%;
         .feedWrapper{
             max-width: 350px;
             margin: 10px;
@@ -874,6 +880,10 @@ a:hover{
 }
 
 
+.feedPage{
+    display: none;
+    width: 98%;
+}
 
 .marquee-container {
     overflow: hidden;
@@ -936,8 +946,10 @@ a:hover{
             gap: 5px;
             img{
                width: 120px;
+               margin-left: 25px;
+               background: #efefef;
                 border-radius: 10px;
-
+                box-shadow: 2px 2px 3px grey;
             }
         }
         .contAbt{
@@ -1072,4 +1084,26 @@ a:hover{
 a.activehref{
     // opacity: 0;
     color: orangered;
+}
+.loaderdiv{
+    .miniload-wrapper{
+        height: 38vh;
+
+        .lds-ring {
+            width: 150px;
+            height: 150px;
+
+            div{
+                width: 100%;
+                height: 100%;
+                border: 10px solid grey;
+                border-color: #555 transparent transparent transparent;
+
+            }
+          }
+          @media screen and (min-width:767px) {
+            height: 65vh;
+
+          }
+    }
 }

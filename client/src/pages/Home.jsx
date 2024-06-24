@@ -68,10 +68,11 @@ function Home() {
   const postRand = posts.sort(() => Math.random() - 0.5);
 
   return (
-    <>
+    <div className='wrapHome'>
       <div className="head-container">
         <Header />
         <HeadSlider />
+        </div>
 
         {/* Activities  */}
         {postStatic.filter(i => i.cat === "static" && i.title === "welcomeText").map((a) => (
@@ -137,9 +138,8 @@ function Home() {
 }
           </div>
         </div>
-      </div>
       <Footer />
-    </>
+    </div>
   )
 }
 
