@@ -33,10 +33,10 @@ router.post("/post", uploadMiddleware.single("img"), async (req, res) => {
     });
 
     // Delete the image from disk storage after it has been uploaded to Cloudinary
-    // const filePath = path.join(__dirname, '../../', req.file.path);
-    // fs.unlink(filePath, (err) => {
+    const filePath = path.join(__dirname, '../../', req.file.path);
+    fs.unlink(filePath, (err) => {
      
-    // });
+    });
 
     // Create post with uploaded image URL
     const postData = {
@@ -96,10 +96,10 @@ router.put("/post/:postId", uploadMiddleware.single("img"), async (req, res) => 
       // Save updated post to database
       const updatedPost = await post.save();
 // Delete the image from disk storage after it has been uploaded to Cloudinary
-// const filePath = path.join(__dirname, '../../', req.file.path);
-// fs.unlink(filePath, (err) => {
+const filePath = path.join(__dirname, '../../', req.file.path);
+fs.unlink(filePath, (err) => {
  
-// });
+});
 
  
       res.send(updatedPost);
