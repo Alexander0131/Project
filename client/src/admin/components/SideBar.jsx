@@ -51,20 +51,20 @@ function SideBar() {
             <div className='nav-wrap'>
                 <div className='icons'>
 
-                <NavLink to="/" className={closed ? 'sub on' : 'sub'}><button ><IoIosHome className='icon'/></button> <b>Home</b></NavLink>
+                <NavLink to="/" className={closed ? 'activehref on' : 'activehref'}><button ><IoIosHome className='icon'/></button> <b>Home</b></NavLink>
 
-                <NavLink to={`/admin/defex`} className={closed ? 'sub on' : 'sub'}><button><RiDashboardLine className='icon'/></button> <b>Dashboard</b></NavLink>
+                <NavLink to={`/admin/defex`} className={closed ? 'activehref on' : 'activehref'}><button><RiDashboardLine className='icon'/></button> <b>Dashboard</b></NavLink>
 
                 
  
-                <NavLink to={`/admin/defex/site-health`} className={closed ? 'sub on' : 'sub'}><button><BiHealth className='icon'/></button> <b>Site Health</b></NavLink>
+                <NavLink to={`/admin/defex/site-health`} className={closed ? 'activehref on' : 'activehref'}><button><BiHealth className='icon'/></button> <b>Site Health</b></NavLink>
 
-                <NavLink to={`/admin/defex/configure`} className={closed ? 'sub on' : 'sub'}><button><AiFillSetting className='icon'/></button> <b>Configure</b></NavLink>
+                <NavLink to={`/admin/defex/configure`} className={closed ? 'activehref on' : 'activehref'}><button><AiFillSetting className='icon'/></button> <b>Configure</b></NavLink>
                 </div>
 
 
                 <div className='poss'>
-                <div className={closed ? 'sub on' : 'sub'}><button>
+                <div className={closed ? 'activehref on' : 'activehref'}><button>
               
                  
               <FaCircleInfo onClick={() => setPop(true)} className='icon'/>
@@ -73,11 +73,11 @@ function SideBar() {
 
 
     {isAdmin && 
-                <NavLink to="/admin/defex/add-account" className={closed ? 'sub on' : 'sub'}><button><AiOutlineUsergroupAdd className='icon'/></button> <b>Add Account</b></NavLink>
+                <NavLink to="/admin/defex/add-account" className={closed ? 'activehref on' : 'activehref'}><button><AiOutlineUsergroupAdd className='icon'/></button> <b>Add Account</b></NavLink>
                 }
                 
 
-                <NavLink to={`/admin/defex/account`} className={closed ? 'sub on' : 'sub'}><button>
+                <NavLink to={`/admin/defex/account`} className={closed ? 'activehref on' : 'activehref'}><button>
               
                  
                   <CgProfile className='icon'/>
