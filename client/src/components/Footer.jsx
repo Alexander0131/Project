@@ -40,7 +40,7 @@ function Footer() {
       handleFetchData();
     }, []);
   return (
-    <div>
+    <div className='footwrap'>
       <div className="loaderdiv">
         {posts ? null : <MiniLoading/>}
       </div>
@@ -52,7 +52,7 @@ function Footer() {
 
         <div className="contAbt">
 
-        <div>
+        <div className='div'>
             <h4>Contact Us</h4>
             <div className='contact-footer'>
             <span>

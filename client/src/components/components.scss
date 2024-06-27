@@ -578,7 +578,7 @@ a:hover{
                 margin: 10px;
                 h1{
                 max-width: 500px;
-                width: 300px;
+                width: 150px;
                 overflow: hidden;
                 padding-right: 5px;
                 border: 1px solid #fff;
@@ -628,7 +628,7 @@ a:hover{
                 .swiperHead{
                     .mySwiper{
                         .swiperSlide{
-                height: 230px;
+                height: 300px;
                 width: 100%;
                             margin-top: -10vh;
                         }
@@ -645,12 +645,12 @@ a:hover{
             }
             .centLink{
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
                 bottom: 0px;
-                height: 200px;
+                height: 180px;
                 a{
-                    padding: 5px;
-                    width: 80%;
+                    padding: 3px;
+                    width: 70%;
                     border-radius: 0 50px 50px 0;
                 }
             }
@@ -825,6 +825,11 @@ a:hover{
 
 .feedHome, .subLink-wrap{
     // width: 95%;
+    
+    h1{
+        margin-left: 5px;
+        
+    }
     .feedMap{
         display: flex;
         flex-wrap: wrap;
@@ -953,14 +958,15 @@ a:hover{
             }
         }
         .contAbt{
-            flex: 2;
+            // flex: 2;
             display: flex;
             align-items: center;
-            justify-content:space-between;
+            justify-content:space-around;
             width: 100%;
             margin: 10px;
-            div{
+            .div{
                 width: 100%;
+                flex: 1;
             }
         }
         
@@ -978,10 +984,21 @@ a:hover{
             }
         }
         .abtus{
+            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 10px;
-            width: 33%;
+            padding: 15px;
+            width: 95%;
+
+
+            a{
+                width: 100%;
+                word-wrap: break-word;
+            }
+            a:hover{
+                color: #fff;
+            }
             div{
                 display: flex;
                 align-items: center;
@@ -1107,3 +1124,17 @@ a.activehref{
           }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
