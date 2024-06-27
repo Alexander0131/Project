@@ -82,7 +82,7 @@ function SiteHealth() {
 
           
              // service
-              const max = 3;
+            //  const max = 3;
            
                 setBoardVal(data.filter(i => i.cat === "board").length);
              
