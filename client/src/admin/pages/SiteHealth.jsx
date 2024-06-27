@@ -13,7 +13,7 @@ function SiteHealth() {
     const [idQuery, setIdQuery] = useState('');
     const [statics, setStatics] = useState([]);
     const [feedVal, setFeedVal] = useState(0)
-    const [serviceVal, setServiceVal] = useState(0)
+    const [boardVal, setBoardVal] = useState(0)
     const [sublinkVal, setSublinkVal] = useState(0)
     const [childVal, setChildVal] = useState(0);
     const [abtVal, setAbtVal] = useState(0);
@@ -84,7 +84,7 @@ function SiteHealth() {
              // service
             //  const max = 5;
            
-                setServiceVal(data.filter(i => i.cat === "service").length);
+                setBoardVal(data.filter(i => i.cat === "board").length);
              
             // Sublink
             
@@ -151,7 +151,7 @@ function SiteHealth() {
             <b>Grand-Child</b> <div className='wrapper'> <div className={grandchildVal * 3.703 > 75 ? "inner red" : "inner"} style={{width: grandchildVal  * 3.703 + "%"}}></div></div>
         </div>
         <div className="row">
-            <b>Service</b> <div className='wrapper'> <div className={serviceVal * 20 > 75 ? "inner red" : "inner"} style={{width: serviceVal  * 20 + "%"}}></div></div>
+            <b>Board</b> <div className='wrapper'> <div className={boardVal * (100/3) > 75 ? "inner red" : "inner"} style={{width: boardVal  * (100/3) + "%"}}></div></div>
         </div>
         <div className="row">
             <b>About</b> <div className='wrapper'> <div className={abtVal * 20  > 75 ? "inner red" : "inner"} style={{width: abtVal  * 20 + "%"}}></div></div>
@@ -167,11 +167,11 @@ function SiteHealth() {
 
 <div className="circleChild">
 
-<CircularProgressbar value={(feedVal + sublinkVal + childVal + grandchildVal) / (100/1.07)} text={((feedVal + sublinkVal + childVal + grandchildVal) / (100/1.07)).toString().slice(0,3) + "%"}/>
+<CircularProgressbar value={((feedVal + sublinkVal + childVal + grandchildVal) / 107) * 100} text={(((feedVal + sublinkVal + childVal + grandchildVal) / 107) * 100).toString().slice(0,3) + "%"}/>
 </div>
 
 </div>
-<h2>Total Posts: {(feedVal + sublinkVal + childVal + grandchildVal)} out of 107</h2>
+<h2>Total Posts: {(feedVal + sublinkVal + childVal + grandchildVal)} out of 110</h2>
 
 
        </div>
