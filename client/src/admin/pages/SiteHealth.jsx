@@ -162,7 +162,7 @@ function SiteHealth() {
         <div className="row">
             <b>Swiper</b> <div className='wrapper'> <div className={swipeVal * (100/3) > 75 ? "inner red" : "inner"} style={{width: swipeVal * (100/3) + "%"}}></div></div>
         </div>
-
+ 
 <div className="circle">
 
 <div className="circleChild">
