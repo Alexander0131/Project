@@ -146,12 +146,21 @@ a:hover{
             .address{
                 display: flex;
                 justify-content: center;
+                position: relative;
+                height: 32px;
                 .contact{
                     display: flex;
                     width: 100%;
                     p{
                         flex: 3;
                         text-align: center;
+                        position: absolute;
+
+                    }
+                    .theme{
+                        position: absolute;
+                        right: 1px;
+                        top: 0;
                     }
                 }
                 .sideOut{
