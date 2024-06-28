@@ -82,7 +82,7 @@ function SiteHealth() {
 
           
              // service
-            //  const max = 5;
+            //  const max = 3;
            
                 setBoardVal(data.filter(i => i.cat === "board").length);
              
@@ -151,7 +151,7 @@ function SiteHealth() {
             <b>Grand-Child</b> <div className='wrapper'> <div className={grandchildVal * 3.703 > 75 ? "inner red" : "inner"} style={{width: grandchildVal  * 3.703 + "%"}}></div></div>
         </div>
         <div className="row">
-            <b>Board</b> <div className='wrapper'> <div className={boardVal * (100/3) > 75 ? "inner red" : "inner"} style={{width: boardVal  * (100/3) + "%"}}></div></div>
+            <b>Service</b> <div className='wrapper'> <div className={serviceVal * 20 > 75 ? "inner red" : "inner"} style={{width: serviceVal  * 20 + "%"}}></div></div>
         </div>
         <div className="row">
             <b>About</b> <div className='wrapper'> <div className={abtVal * 20  > 75 ? "inner red" : "inner"} style={{width: abtVal  * 20 + "%"}}></div></div>
