@@ -151,7 +151,7 @@ function SiteHealth() {
             <b>Grand-Child</b> <div className='wrapper'> <div className={grandchildVal * 3.703 > 75 ? "inner red" : "inner"} style={{width: grandchildVal  * 3.703 + "%"}}></div></div>
         </div>
         <div className="row">
-            <b>On Board</b> <div className='wrapper'> <div className={boardVal * (100/3) > 75 ? "inner red" : "inner"} style={{width: boardVal  * (100/3) + "%"}}></div></div>
+            <b>On Board</b> <div className='wrapper'> <div className={boardVal * (100/3) > 75 ? "inner red" : "inner"} style={{width: boardVal  * (100/3) + "%"}}></div></div>  
         </div>
         <div className="row">
             <b>About</b> <div className='wrapper'> <div className={abtVal * 20  > 75 ? "inner red" : "inner"} style={{width: abtVal  * 20 + "%"}}></div></div>
