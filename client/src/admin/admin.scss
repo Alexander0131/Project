@@ -108,7 +108,7 @@ button{
         border-bottom: 0.5px solid grey;
         border-top: 0.5px solid grey;
 
-        .activehref{
+        .sub{
             display: flex;
             align-items: center;
             gap: 5px;
@@ -122,7 +122,7 @@ button{
             border-radius: 10px;
            }
         }
-        .activehref.on{
+        .sub.on{
             display: flex;
             align-items: center;
             gap: 5px;
