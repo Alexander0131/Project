@@ -310,19 +310,11 @@ setTimeout(() => {
         <SideBar/>
         <div className="sideWrapper">
 
-        <div className='config'>
+        <div className='config
+        '>
 
-        <div className={pop ? 'popup' : 'popup hide'}>
-          <div className="main-pop" align="center">
-            Please note that deleting this item can't be undone. {space}
-            <div>
-              <button onClick={() => setPop(false)}>Cancel</button>
-              <button>Continue</button>
-            </div>
-          </div>
-        </div>
-  
-           <div>
+       
+           <div className='setHere'>
              <h3>Defex Static settings</h3>
              <div>
              

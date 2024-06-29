@@ -8,18 +8,28 @@ $gen: #c0786a;
 $white: #fff;
 $black: #000;
 
+
 .config-page{
+
   .config{
       border: 0.5px solid gray;
       margin: 5px;
     padding: 5px;
     width: 97%;
-    position: relative;
+    overflow: hidden;
     display: flex;
     justify-content: center;
+    overflow: scroll;
+
+    @media screen and (max-width:767px){
+        
+        .setHere{
+            margin-left: 220px;
+        }
+    }
 
     .popup{
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
@@ -29,6 +39,7 @@ $black: #000;
         justify-content: center;
         background-color: rgba(225, 225, 225, 0.2);
         backdrop-filter: blur(2px);
+        z-index: 52;
         
         .main-pop{
             background-color: $white;
@@ -97,6 +108,7 @@ $black: #000;
         .wrap-All{
             margin: 10px;
             display: flex;
+            overflow: hidden;
             align-items: center;
             justify-content: center;
             flex-direction: column;
