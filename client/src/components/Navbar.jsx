@@ -147,7 +147,7 @@ useEffect(() => {
         <NavLink onClick={handOver} className={({isActive}) => isActive ? 'activehref' : ''} to='/about'>
           About
         </NavLink>
-        {window.innerWidth <= 767 &&
+        {window.innerWidth <= "767px" &&
         <NavLink onClick={handOver} className={({isActive}) => isActive ? 'activehref' : ''} to='/contact'>
           Contact Us
         </NavLink>}
