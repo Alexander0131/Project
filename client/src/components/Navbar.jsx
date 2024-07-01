@@ -71,7 +71,7 @@ useEffect(() => {
         </NavLink>
        
         {window.innerWidth <= 767
-         && <NavLink onClick={handOver} className={({isActive}) => isActive ? 'activehref' : ''} to='/feed'>
+         && <NavLink onClick={handOver} className={({isActive}) => isActive ? 'activehref mobile' : 'mobile'} to='/feed'>
           Feed
         </NavLink>
         }
@@ -148,7 +148,7 @@ useEffect(() => {
           About
         </NavLink>
         {window.innerWidth <= 767 &&
-        <NavLink onClick={handOver} className={({isActive}) => isActive ? 'activehref' : ''} to='/contact'>
+        <NavLink onClick={handOver} className={({isActive}) => isActive ? 'activehref mobile' : 'mobile'} to='/contact'>
           Contact Us
         </NavLink>}
       </div>

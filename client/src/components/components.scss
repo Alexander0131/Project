@@ -123,6 +123,7 @@ a:hover{
         // Header Responsiveness
         // Mobile
     @media screen and (max-width: 767px) {
+
         .overall{
             position: relative;
             display: flex;
@@ -397,6 +398,13 @@ a:hover{
 @media screen and (min-width:767px) {
     /* Nav start */
     // Block Menu Nav & no icon needed
+
+    .mobile{
+       display: none;
+     }
+
+
+
     nav{
         display: none;
     }
