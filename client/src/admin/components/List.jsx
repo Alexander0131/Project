@@ -10,6 +10,7 @@ import Noti from './Noti';
 import {MdSignalWifiConnectedNoInternet0 } from 'react-icons/md';
 import { apiUrl } from '../../config';
 
+// const apiUrl = "http://apiUrl:5000"; 
 
 function List({ not, setNot, loading, setLoading, idQuery }) {
   const [posts, setPosts] = useState([]);
@@ -83,6 +84,7 @@ function List({ not, setNot, loading, setLoading, idQuery }) {
     // e.preventDefault();
     if(delParent){
 
+      console.log(delParent)
       setIdParent(delParent);
     }
 
@@ -132,8 +134,10 @@ function List({ not, setNot, loading, setLoading, idQuery }) {
             await axios.put(`${apiUrl}/api/posts/${idParent}`, {
               sec: remSec -1
             })
-
+            console.log("parent editted")
+            console.log(remSec)
           } catch (error) {
+            console.log(error)
           }
           
         }
@@ -143,6 +147,7 @@ function List({ not, setNot, loading, setLoading, idQuery }) {
 
       if (delCat === "sublink" || delCat === "child"){
         const subPost = posts.filter(item => item.link[1] === delLink);
+          console.log({subPost})
   
           if(subPost == ""){
           deleteItem(idStore);
@@ -181,11 +186,12 @@ function List({ not, setNot, loading, setLoading, idQuery }) {
     async function deleteItem(idParam) {
      
       const itemData = posts.find(item => item._id === idParam);
-      const itemStatic = postStatic.find(item => item.title === itemData.cat);
+      console.log("item: " + itemData.title)
+      console.log("itemImg: " + itemData.img)
       if(itemData) {
         
   
-deleteImg(`${itemData.imgId}`, idParam, itemStatic._id);
+deleteImg(`${itemData.img}`, idParam);
 
       }
     
@@ -194,17 +200,22 @@ deleteImg(`${itemData.imgId}`, idParam, itemStatic._id);
 
       const path = imgLink.split("/");
       const imgParts = path[path.length -1]
+      console.log(imgParts)
       try {
         await axios.delete(`${apiUrl}/api/upload/delete`, {
           data: {
-            img: imgLink
+            img: imgParts
           },
         });
+        console.log("Image deleted successfully");
       } catch (error) {
+        console.log("Image deletion failed");
       }
       deleteMain(toDel, secId);
+      // console.log({id})
     }
     
+    // delImgErr();
     
 
    
@@ -294,14 +305,14 @@ deleteImg(`${itemData.imgId}`, idParam, itemStatic._id);
                    <img src={b.img} alt="" />
                     <div className='grea'>
 
-                      <h3>{b.title} {b.cat === "child" || b.cat === "grandChild" ? <small> &gt;  {b.link[1].replace(/%20/g, ' ')} </small>: null} </h3>
+                      <h3>{b.title} {a.cat === "child" || a.cat === "grandChild" ? <small> &gt;  {b.link[1].replace(/%20/g, ' ')} </small>: null} </h3>
                     <p>
                        <i dangerouslySetInnerHTML={{ __html: b.content }} />
                     </p>
                     </div>
                    
                     <button>
-                      <Link to={`/admin/defex/edit/${b._id}`}>
+                      <Link to={`/admin/defex/edit/${a._id}?q=${idQuery}`}>
                         <BiEdit className="icon" />
                       </Link>
                       
