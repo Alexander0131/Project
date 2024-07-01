@@ -433,7 +433,7 @@ a:hover{
         }
         .logoA{
             flex:1;
-            width: 250px;
+            width: 200px;
             // display: none;
 
         
@@ -903,7 +903,6 @@ a:hover{
 
 
 .feedPage{
-    display: none;
     width: 98%;
 }
 
@@ -980,7 +979,6 @@ a:hover{
             align-items: center;
             justify-content:space-around;
             width: 100%;
-            margin: 10px;
             .div{
                 width: 100%;
                 flex: 1;
@@ -1142,7 +1140,10 @@ a.activehref{
     }
 }
 
-
+.footwrap{
+    background-color: red;
+    width: 100%;
+}
 
 
 
