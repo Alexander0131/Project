@@ -180,7 +180,7 @@ const handleChange = async (e) => {
        
 
 
-        if(edTitle !== "" && imgFile && !findTitle && validChat(edTitle) && edImg !== logo && edTitle.length <= 8){
+        if(edTitle !== "" && imgFile && !findTitle && validChat(edTitle) && edImg !== logo){
     
             //Approving the partner & gallery cat to db
             if(edCat === "patner" || edCat === "gallery" || edCat === "swiper" || edCat === "board" || edCat === "sublink" && edTitle.length >= 8){

@@ -595,7 +595,6 @@ a:hover{
                 margin: 10px;
                 h1{
                 max-width: 500px;
-                width: 150px;
                 overflow: hidden;
                 padding-right: 5px;
                 border: 1px solid #fff;
@@ -651,10 +650,10 @@ a:hover{
                         }
                     }
             .info{
-                max-width: 350px;
+                min-width: 180px;
+                max-width: 400px;
                 
                 h1{
-                    width: 100%;
                     font-size: 15px;
                     text-align: left;
                     padding: 10px;
@@ -691,9 +690,12 @@ a:hover{
                     .info{
                         overflow: hidden;
                         min-width: 200px;
+                        width: fit-content;
                         
                         h1{
                             text-align: right;
+                            width: fit-content;
+
                         }
                     }
                     .centLink{
@@ -1141,7 +1143,6 @@ a.activehref{
 }
 
 .footwrap{
-    background-color: red;
     width: 100%;
 }
 

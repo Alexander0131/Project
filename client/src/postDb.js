@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { apiUrl } from './config';
+import {localData} from './tempData';
 
 export async function fetchTracker() {
   try {
@@ -10,23 +11,29 @@ export async function fetchTracker() {
 }
 
 export async function fetchData() {
+  var data = localData 
+
   try {
     const response = await axios.get(`${apiUrl}/api/posts`);
-    const data = response.data;
+     data = response.data;
     localStorage.setItem('cachedData', JSON.stringify(data));
-    return data;
   } catch (error) {
     const cachedData = localStorage.getItem('cachedData');
     if (cachedData) {
-      return JSON.parse(cachedData);
+      data = JSON.parse(cachedData);
     }
     throw error;
   }
+  
+  
+  return data;
 }
 
 export async function fetchStatic() {
   try {
     const response = await axios.get(`${apiUrl}/api/static`);
+    localStorage.setItem('cachedStatic', JSON.stringify(response.data));
+
     return response.data;
   } catch (error) {
     throw error;
