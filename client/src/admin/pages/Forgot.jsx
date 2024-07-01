@@ -4,6 +4,7 @@ import Loading from '../components/Loading';
 import axios from 'axios';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import emailjs from 'emailjs-com';
+import { apiUrl } from '../../config';
 
 
 
@@ -49,7 +50,6 @@ function Forgot({loading, setLoading}) {
       }, [])
         
 
-  const localhost = "http://localhost:5000";
 
    async function reqNewPass(e) {
     e.preventDefault();
@@ -74,7 +74,7 @@ function Forgot({loading, setLoading}) {
 
                       async function forget(fogId, fogName) { 
                         try {
-                            const response = await axios.put(`${localhost}/api/auth0/account/edit/${fogId}`,{
+                            const response = await axios.put(`${apiUrl}/api/auth0/account/edit/${fogId}`,{
                                 username: fogName,
                                 conPass: coded,
                                 purpose: "forgetPass",
@@ -120,7 +120,7 @@ function Forgot({loading, setLoading}) {
             load: true, loadState: "", loadText: "Comparing..."
         });
         try {
-            const response = await axios.post(`${localhost}/api/auth0/login`,{
+            const response = await axios.post(`${apiUrl}/api/auth0/login`,{
                 username: username.toLowerCase(),
                 purpose: "login",
                 password: con 
@@ -181,7 +181,7 @@ function Forgot({loading, setLoading}) {
             load: true, loadState: "", loadText: "Reseting"
         }); 
         try {
-            const response = await axios.put(`${localhost}/api/auth0/account/edit/${fogIdr}`,{
+            const response = await axios.put(`${apiUrl}/api/auth0/account/edit/${fogIdr}`,{
                 username: username.toLowerCase(),
                 conPass: resetedPass,
                 password: con,
