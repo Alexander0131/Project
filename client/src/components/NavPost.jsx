@@ -32,7 +32,7 @@ useEffect(() => {
         
             <div className='wrap-cont'>
 
-            {posts.sort(() => Math.random() - 0.5).filter(item => item.cat === "child").slice(0,3).map((a) => (
+            {posts.sort(() => Math.random() - 0.5).filter(item => item.cat === "child" || item.cat === "sublink" || item.cat === "grandChild").slice(0,3).map((a) => (
                     <div  key={a._id} className="post-container">
                 <Link to={`/sub/${a.link[1]}/${a.link[0]}`}>
               <img src={a.img ? a.img : imgLoad} alt="" />
