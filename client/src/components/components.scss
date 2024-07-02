@@ -956,7 +956,6 @@ a:hover{
         .footer{
             justify-content: space-between;
             width: 100%;
-            padding: 10px;
             div{
             width: 32%;
         }
@@ -977,11 +976,11 @@ a:hover{
             }
         }
         .contAbt{
-            // flex: 2;
             display: flex;
             align-items: center;
             justify-content:space-around;
-            width: 100%;
+            width: 95%;
+            margin-left: 8px;
             .div{
                 width: 100%;
                 flex: 1;
