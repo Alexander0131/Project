@@ -13,7 +13,7 @@ import MiniLoading from '../components/MiniLoad'
 import { fetchData, fetchStatic } from '../../postDb';
 import { Link } from 'react-router-dom'
 import { AiFillAppstore } from 'react-icons/ai';
-import { apiUrl } from '../../config';
+import { apiUrlUp } from '../../config';
 
 function New({ not, setNot, loading, setLoading, login}) {
 
@@ -56,7 +56,7 @@ function New({ not, setNot, loading, setLoading, login}) {
             async function auth( username, password, userId) {
              
                 try {
-                 const response = await axios.post(`${apiUrl}/api/auth0/login`, {
+                 const response = await axios.post(`${apiUrlUp}/api/auth0/login`, {
                       username: username.toLowerCase(),
                       password: password,
                       purpose: "login"
@@ -247,7 +247,7 @@ const handleChange = async (e) => {
          formData.append("edLink", edLink);
          formData.append("mod", [idQuery]);
      try {
-         await axios.post(`${apiUrl}/api/upload/post`, formData);
+         await axios.post(`${apiUrlUp}/api/upload/post`, formData);
          setLoading({
             load: true,
             loadState: 'good',

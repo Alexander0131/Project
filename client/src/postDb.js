@@ -1,10 +1,12 @@
 import axios from 'axios';
-import { apiUrl } from './config';
+import { apiUrl, apiUrlUp } from './config';
 import {localData} from './tempData';
 
 export async function fetchTracker() {
   try {
     const response = await axios.get(`${apiUrl}/api/track/get`);
+    const wake = await axios.get(`${apiUrlUp}/api/posts`);
+
     return response.data; 
   } catch (err) {
   }

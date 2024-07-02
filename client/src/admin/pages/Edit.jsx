@@ -9,7 +9,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios'
 import Loading from '../components/Loading';
-import { apiUrl } from '../../config';
+import { apiUrlUp, apiUrl } from '../../config';
 
 function Edit({loading, setLoading}) {
     const [idQuery, setIdQuery] = useState('');
@@ -175,7 +175,7 @@ if(imgState){
              formData.append("purpose", "edit");
              setLoading({...loading, load: true, loadText: "Uploading Image"});
          try {
-             await axios.put(`${apiUrl}/api/upload/post/${idParam}`, formData);
+             await axios.put(`${apiUrlUp}/api/upload/post/${idParam}`, formData);
              
              refetch();
             } catch (error) {
@@ -201,7 +201,7 @@ function refetch(){
                 // Check if the item was found
                 if (item) {
                     
-                    setEdImg(`${apiUrl}/${item.img}`);
+                    setEdImg(`${item.img}`);
                     update(`${item.img}`, `${item._id}`);
                 } else {
                     
@@ -228,7 +228,7 @@ else{
         async function update(imgLink) {
             setLoading({...loading, load: true, loadText: "Editing Post"});
             try {
-                await axios.put(`${apiUrl}/api/posts/${idParam}`, {
+                await axios.put(`${apiUrlUp}/api/posts/${idParam}`, {
                     title: edTitle,
                     content: quilVal,
                     img: imgLink,
@@ -253,7 +253,7 @@ if(imgState){
                   
                   
                     try {
-                        await axios.delete(`${apiUrl}/api/upload/delete`, {
+                        await axios.delete(`${apiUrlUp}/api/upload/delete`, {
                         data: {
                           img: oldImg,
                           link: imgId
@@ -272,7 +272,7 @@ if(imgState){
                 async function delImgErr() {
                   
                     try {
-                      await axios.delete(`${apiUrl}/api/upload/delete`, {
+                      await axios.delete(`${apiUrlUp}/api/upload/delete`, {
                         data: {
                           img: imgLink,
                           link: imgId
