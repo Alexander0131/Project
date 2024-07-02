@@ -7,6 +7,7 @@ router.use(express.json());
 
 // Define the route to update a document
 router.put("/edit/:id", async (req, res) => {
+    console.log(req.body)
     try {
         const updateDoc = await staticOut.findByIdAndUpdate(
             req.params.id,
@@ -16,12 +17,14 @@ router.put("/edit/:id", async (req, res) => {
 
         if (!updateDoc) {
             // If the document with the specified ID doesn't exist, return a 404 Not Found response
+            console.log("not found")
             return res.status(404).json({ error: 'Document not found' });
         }
 
         res.status(200).json(updateDoc);
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
+        console.log(error)
     }
 });
 
