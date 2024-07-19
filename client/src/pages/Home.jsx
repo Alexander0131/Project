@@ -15,10 +15,13 @@ function Home() {
   const [postStatic, setPostStatic] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(null);
+  const [slideData, setSlideData] = useState([]);
 
   document.title = "Defex Ltd";
   // Fetching data from API
   useEffect(() => {
+
+    
     async function handleFetchData() {
       try {
         const data = await fetchData();
@@ -30,9 +33,16 @@ function Home() {
         setError("Error fetching data: " + error.message);
       }
     }
+
+
+
+
+
+
     handleFetchData();
   }, []);
 
+  
   // Fetch tracking data
   useEffect(() => {
     async function fetchTrack() {
@@ -70,8 +80,7 @@ function Home() {
   return (
     <div className='wrapHome'>
       <div className="head-container">
-        <Header />
-        <HeadSlider />
+         <Header slideData={true}/>
         </div>
 
         {/* Activities  */}
@@ -101,7 +110,7 @@ function Home() {
           <div className="feedHome">
           {posts.filter(item => item.cat == "feed").length >= 1 &&
           <>
-            <h1>Feed</h1>
+            <h1>News</h1>
             <div className="feedMap">
               {postRand.filter(item => item.cat === "feed").slice(0, 3).map((a) => (
                 <div className='feedWrapper' key={a._id}>

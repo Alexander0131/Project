@@ -89,24 +89,25 @@ function PriLink() {
         {posts
           .filter(
             (item) =>
-              (item.link[0] === thirdParam && item.cat === 'sublink') ||
+              (item.link[0] === thirdParam && item.cat === 'child') ||
               (item.cat === 'board' && item.link[0] === thirdParam)
           )
           .slice(0, 1)
           .map((a) => (
             <div className="sub" key={a._id}>
-              <div className="headerImg">
-                <img src={a.img ? a.img : imgLoad} alt="" />
-              </div>
-              <div className="subHedWrap">
-                <h4 dangerouslySetInnerHTML={{ __html: a.title }}></h4>
-              </div>
-              <div className="subText">
+               <div className="headerImg">
+                <img src={a.img ? a.img : imgLoad} alt="" /> 
+            <span className="coverImg"></span>
+           <div className="coverAll">
+            <h1 dangerouslySetInnerHTML={{ __html: a.title }}></h1>
+            <button className="line"></button>
+           </div>
+          </div>
+          <div className="subText">
                 <p dangerouslySetInnerHTML={{ __html: a.content }} />
               </div>
             </div>
-          ))}
-
+          )) }
 
         <NavPost />
       </div>

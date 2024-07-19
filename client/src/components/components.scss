@@ -34,48 +34,37 @@ a:hover{
 .icon{
     cursor: pointer;
 }
+.searcherWrap{
+    width: 100%;
+
+    .search-bar{
+        background: red;
+        width: 100%;
+        display: none;
+    }
+}
 
 //Header component starts
 
 
 
 .overall-wrap{
-    position: relative;
-    top: 0;
     width: 100%;
     background-color: $white;
     color: $black;
-    height: 70px;
     z-index: 10;
-    margin-bottom: 10px;
-
+    
     .overall{
         background: inherit;
-        top: 0;
         width: 100%;
-        height: 75px;
-        border-bottom: 2px solid $primary;
-
         
-       
+
         }
 
         
         .address{
           
-            .contact{
-                
-                p{
-                    font-family: 'font-family: 'Josefin Sans', sans-serif;';
-                    margin: 0;
-                    font-size: 12px;
-                    width: 100%;
-+                    b{
-                        text-align: right;
-                    }
-                }
-
-            }
+        
             .sideOut{
                 gap: 5px;
                 max-width: 600px;
@@ -92,7 +81,7 @@ a:hover{
                 }
                 
                 .search-bar{
-                    background-color: inherit;
+                    background-color: #fff;
                     border: 1px solid $primary;
                     padding: 5px;
                     margin-right: 5px;
@@ -100,7 +89,7 @@ a:hover{
                     display: flex;
                     align-items: center;
                     input{
-                        background-color: inherit;
+                        background-color: #000;
                         display: none;
                     }
                     
@@ -125,19 +114,158 @@ a:hover{
     @media screen and (max-width: 767px) {
 
         .overall{
-            position: relative;
             display: flex;
             justify-content: center;
-            flex-direction: column-reverse;
+            align-items: center;
+            flex-direction: column;
+            background: white;
             .inner-content{
+                background-color: rgb(0, 0, 0, 0.97);
+                // height: 120px;
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
+                flex-direction: column;
                 width: 100%;
+                margin-bottom: 10px;
                 .mobile{
-                    margin-top: 5px;
-                    margin-right: 5px;
-                    font-size: 25px;
                     cursor: pointer;
+                    // margin-top: -50px;
+                    padding-bottom: 50px;
+                    padding-top: 20px;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    // flex-direction: column;
+                    justify-content: center;
+                    gap: 5px;
+                    width: 100%;
+
+                    .span{
+                        width: 90%;
+                    }
+
+                    .wrap{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        max-width: 300px;
+                        z-index: 4;
+
+                        nav{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            .navbar{
+                                width: 100%;
+                                display: none;
+                                align-items: center;
+                                justify-content: center;
+
+                                .nav-container{
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                            }
+                            .navbar.active{
+                                display: flex;
+                            }
+
+                            .wrapOuter{
+                                width: 100%;
+
+                                a{
+                                    
+                                    border-bottom: 1px solid orangered;
+                                }
+
+
+                                .span, .spanIn{
+                                    display: flex;
+                                    width: 100%;
+                                    position: relative;
+
+                                    .btnZ, .btnQ{
+                                        position: absolute;
+                                        right: 10px;
+                                        top: 50%;
+                                        bottom: 50%;
+                                        transform: translateY(-50%);
+                                        transition: 0.5s ease;
+                                    }
+                                    .btnZ{
+                                        display: none;
+                                    }
+
+                                }
+
+                                .navSpread{
+                                    display: none;
+                                    a{
+                                        padding-left: 30px;
+                                    }
+                                }
+                                
+
+                            }
+                            .wrapOuter.true{
+                                .navSpread{
+                                    display: block;
+                                }
+                                .btnZ{
+                                    transform: translateY(-50%) rotate(-180deg);
+
+                                }
+                                    .navSpread.in{
+                                        display: none;
+                                        
+                                       
+                                    }
+                                .spreader.in.active{
+                                    
+                                    .btnQ{
+                                        transform: translateY(-50%) rotate(-180deg);
+                                        
+                                    }
+                                    .navSpread.in{
+                                        display: block;
+                                        
+                                        
+                                    }
+                                        
+                                        .spreader.in{
+                                            a{
+                                                padding-left: 50px;
+                                            }
+                                        }
+                                    }
+                                }
+                        
+                        }
+                    }
+                    
+                    
+                    .search-bar{
+                        background-color: #fff;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        color: #000;
+                        padding: 7px;
+                        margin-top: 10px;
+                        width: 100%;
+                        border-radius: 30px;
+
+
+                        input{
+                            width: 92%;
+                    }
+                    }
                }
 
             }
@@ -148,26 +276,56 @@ a:hover{
                 display: flex;
                 justify-content: center;
                 position: relative;
-                height: 32px;
-                .contact{
-                    display: flex;
-                    width: 100%;
-                    p{
-                        flex: 3;
-                        text-align: center;
-                        position: absolute;
-
-                    }
-                    .theme{
-                        position: absolute;
-                        right: 1px;
-                        top: 0;
-                    }
-                }
                 .sideOut{
                     display: none;
                 }
             }
+
+
+            .wrapTwoNav{
+                display: flex;
+                flex-direction: column;
+                background: #fff;
+                margin-top: -40px;
+                width: 80%;
+                border-radius: 20%;
+                padding: 20px;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                z-index: 3;
+
+                img{
+                    width: 170px;
+                }
+
+                .contactBtn{
+                    background: orangered;
+                    border-radius: 30px;
+                    padding: 8px;
+
+                    a{
+                        color: #fff;
+                    }
+                }
+            }
+            .mobile.naver{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                
+                nav, .navbar, .nav-container, .nav, .navSet{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+
+                }
+            }
+
         }
 
     }
@@ -197,30 +355,16 @@ a:hover{
 // mobile
 @media screen and (max-width:767px) {
    
-
-    .inner-content{
-        img{
-            width: 25%;
-        }
+    .pcHeader{
+        display: none;
     }
-    
+
     nav{
-        display: flex;
         
     
     
-    .coverMenu{
-        position: fixed;
-        top: 0;
-        background-color: none;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        cursor: pointer;
-    }
     .navbar{
         transition: 0.5s ease;
-        margin-right: -100%;
 
         .search-bar{
             display: none;
@@ -229,15 +373,7 @@ a:hover{
     }
     .navbar.active{
         transition: 0.5s ease;
-        position: absolute;
-        top: 70px;
-        min-height: 150vh;
-        max-height: 300vh;
-        width: 70%;
-        margin-right: 0;
-        right: -10px;
-        background-color: $white;
-        padding: 10px;
+        display: flex;
         
         .search-bar{
             display: block;
@@ -259,83 +395,110 @@ a:hover{
     }
     .nav-container{
         display: flex;
-        margin-top: 40px;
         .nav{
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            justify-content: center;
+            min-width: 150px;
+            align-items: start;
+            text-align: center;
+            background-color: #2f2f2f;
+            overflow: hidden;
+            width: 90%;
             
-
-
-            div{
-                display: flex;
-                align-items: center;
-                justify-content: start;
-                // height: 20px;
-                // margin-top: 2px;
-
-                a{
-                    display: flex;
-                    align-items: center;
-                    // height: 20px;
-                }
-            }
-
+            
+            
             a{
+                color: #fff;
+                text-align: left;
+                text-transform: capitalize;
+                display: flex;
+                height: 15px;
+                font-size: 13px;
+                border-bottom: 1px solid orangered;
+                padding: 10px 0;
+                padding-left: 10px;
+                align-items: center;
+                width: 97%;
+                
                 &:hover{
-                    color: $primary;
+                    color: #fff; 
+                    background-color: orangered;
                 }
+                
+                
+             
             }  
-            
+
             &:hover {
                 a{
                     &:hover{
-                        color: $primary;
+                        color: #fff; 
+                        background-color: orangered;
                     }
                 }
             }
-
-            a{
-                // color: #003049;
-                font-weight: bold;
-                text-transform: capitalize;
+            .navHover{
+                width: 100%;
             }
+        
             .linkParent, .attain{
-                display: flex;
-                justify-content: start;
-                color: $secondary;
-                cursor: pointer;
-                gap: 6px;
-                min-width: 100px;
 
-                h4{
-                    // display: none;
-                    border-bottom: 1px solid grey;
+                .navSpread{
+                    width: 100%;
+
+                    a{
+                        padding-left: 30px;
+                    }
+                }
+                .inner{
+                    position: relative;
+
+                    .btnA{
+                        position: absolute;
+                        top: 10px;
+                        right: 27px;
+                        .iconb{
+                            transition: 0.5s ease;
+                            transform: rotate(0deg);
+                            color: #fff;
+                        }
+                        .iconb.transb{
+                            transform: rotate(180deg);
+                            font-size: 15px;
+                            
+                        }
+                    }
                     
                 }
 
                 .grandChild{
-                    display: flex;
+                    display: none;
                     flex-direction: column;
-                    // margin: 10px;
                     align-items: center;
                     justify-content: center;
                     width: 100%;
-                    a{
-                        border-left: 1px solid grey;
-                        margin: 5px;
-                        font-size: 12px;
+
+                    div{
+                        width: 100%;
+
+                        a{
+                            padding-left: 50px;
+                        }
                     }
                 }
+            }
+            .grandChild.active{
+                display: flex;
             }
               .icon{
                     transition: 0.5s ease;
                     transform: rotate(0deg);
-                    font-size: 15px;
+                    color: #fff;
                 }
                 .icon.trans{
                     transition: 0.5s ease;
-                    transform: rotate(90deg);
+                    transform: rotate(180deg);
                     font-size: 15px;
 
                 }
@@ -343,34 +506,10 @@ a:hover{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                }
 
-                .refrain{
-                    display: flex;
-                    flex-direction: column;
-                    text-align: left;
-                    gap: 10px;
-                width: 100%;
-               align-items: start;
-               justify-content: start;
-                }
-           
-            .navSpread.active{
-                margin-left: 30px;
-                display: block;
-               
-
-                .serText{
-                    display: none;
-                }
-                h2{
-                    margin: 2px 0;
-                }
-                b{
-                    font-size: 13px;
-                }
-               
-                
+                    
+                   
+                        
               } 
 
             
@@ -378,11 +517,10 @@ a:hover{
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                gap: 3px;
                 align-items: start;
                 justify-content: start;
-                text-align: left;
 
+               
 
             }
         }
@@ -390,6 +528,46 @@ a:hover{
 }
 
 }
+
+
+
+.attain{
+    display: block;
+    width: 100%;
+    position: relative;
+    
+    a{
+        font-size: 13px;
+        font-weight: normal;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+        .btnA{
+            margin-right: 15px;
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            color: #fff;
+
+            &:hover{
+                border: 1px solid white;
+            }
+        }
+    .btnI{
+        color: #fff;
+    }
+    
+}
+
+
+
+
 }
 
 
@@ -399,175 +577,352 @@ a:hover{
     /* Nav start */
     // Block Menu Nav & no icon needed
 
+    .btnI{
+        color: #555;
+    }
     .mobile{
        display: none;
      }
-
-
-
-    nav{
-        display: none;
-    }
-    .navSet{
-
-        .icon{
-            display: none;
-        }
-    }
-    // Menu Nav Blocked
-    .overall{
-        display: flex;
-        justify-content: space-between;
-    }
-    .inner-content{
-        display: flex;
-        // flex: 6;
-        gap: 10px;
+     .overall{
+        flex-direction: column;
+        position: relative;
         align-items: center;
-        justify-content: space-around;
-        max-width: 1024px;
-    }
-        a{
-            // color: inherit;
-            font-weight: 600;
-        }
-        .logoA{
-            flex:1;
-            width: 200px;
-            // display: none;
+        justify-content: center;
+        height: 110px;
+        background: #000;
 
+     }
+     .inner-content{
+         z-index: 3;
+         height: 60px;
+         width: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+
+     .inner-content, .wrapTwoNav{
         
-            img{
-                width: 100%;
-                // max-width: 100px;
-            }
-        } 
-        
-        .nav-container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            // background-color: black;
-            
-            .nav{
+         
+         .pcHeader{
+             width: 80%;
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             z-index: 2;
+
+             .search-bar{
+                display: block;
+                background: #fff;
+                width: fit-content;
+                float:right;
+                margin: 0;
+                border-radius: 30px;
+                padding: 7px;
+                display: flex;
+                align-items: center;
+             }
+             .nav{
                 display: flex;
                 gap: 10px;
-                margin-top: 48px;
-                justify-content: center;
-                font-family: 'Ubuntu', sans-serif;
 
                 a{
-                    white-space: nowrap;
-                    &:hover{
-                        color: $primary;
-                    }
-                }  
-                
-                &:hover{
-                    a{
-                        color: inherit;
-                        &:hover{
-                            color: $primary;
-                        }
-                    }
+                    color: #a39f9f;
+                    font-size: 13px;
+                    height: 20px;
+                    display: flex;
+                    align-items: center;
+
                 }
 
                 .navSet{
                     display: flex;
                     gap: 10px;
-                    width: 100%;
-                    background-color: inherit;
 
-                    .child{
-                        position: fixed;
+                    .attain{
                         display: flex;
-                        height: fit-content;
-                        color: white;
-                        background: rgb(0, 0, 0, 0.7);
-                        backdrop-filter: blur(3px);
-                        border-radius: 0 0 7px 7px;
-                        border-bottom: 1px solid #fff;
-                        border-right: 1px solid #fff;
-                        border-left: 1px solid #fff;
-                        box-shadow: inset 2px 2px 3px #fff;
-                        
+                        align-items: center;
+                        height: 20px;
+                        justify-content: center;
+                        gap: 1px;
+
+
+                        .btnA{
+                            font-size: 10px;
+                            color: #fff;
+                            margin-top: 4px;
+                        }
+
                     }
-                    
-                    .navSpread{
-                        padding: 10px;
-                        
-
-
-
-
-                        .refrain{
-                            display: flex;
-                            justify-content: space-around;
-                            gap: 10px;
-                            height: fit-content;
-                            width: 97%;
-                            font-family: 'Arvo', serif;
-                            
+                        .navSpread{
+                            position: absolute;
+                            background: #2f2f2f;
                             
                             .inner{
-                                border-left: 2px solid #fff;
-                                padding-left: 5px;
-                                width: 97%;
-                                font-family: 'Arvo', serif;
-                                min-width: fit-content;
-
-                              
-                            }
-                            a{
-
-                                h3{
-                                    text-decoration: underline;
-                                }
-                            }
-                            
-                            .grandChild{
+                                // position: relative;
+                                padding: 7px;
+                                width: 250px;
+                                height: 30px;
                                 display: flex;
-                                flex-direction: column;
-                                text-align: left;
-                                width: 100%;
+                                align-items: center;
+                                justify-content: space-between;
+                                border-bottom: 1px solid orangered;
+
+                                .span{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                }
+                                .btnK{
+                                    font-size: 10px;
+                                    color: #fff;
+                                    transform: rotate(-90deg);
+                                }
+                                .grandChild{
+                                    display: none;
+                                }
 
                                 a{
-                                font-weight: 200;
+                                    color: #fff;
                                 }
+                                &:hover{
+                                    position: relative;
+                                    background: orangered;
+
+                                    .grandChild{
+                                        display: block;
+                                        position: absolute;
+                                        left: 100%;
+                                        top: 0.5px;
+                                        background: #2f2f2f;
+                                        
+                                        
+                                        .grandClass{
+                                            padding: 6.8px;
+                                            width: 250px;
+                                            height: 30px;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: start;
+                                            border-bottom: 1px solid orangered;
+
+                                           &:hover{
+                                            background: orangered;
+                                           
+                                           }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                            // operate here
+
+
+                        
+                        }
+                }
+
+             }
+            }
+            
+        }
+        .wrapTwoNav{
+            padding: 10px;
+            background: #fff;
+            height: 70px;
+            width: 90%;
+            max-width: 1200px;
+            position: absolute;
+            bottom: -70px;
+            z-index: 2;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            // gap: 10px;
+            
+            img{
+                width: 200px;
+            }
+            .pcHeader{
+                width: 60%;
+                 z-index: 30;
+                 
+
+                
+                span{
+                    width: 100%;
+
+                    .nav-container{
+                        width: 100%;
+                        
+                        .nav{
+                            width: 100%;
+                            display: flex;
+                            gap: 35px;
+                            align-items: center;
+                            justify-content: center;
+
+                            a{
+                                color: #555;
+                                white-space: nowrap;
+                            }
+
+                            .attain{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                
+                            }
+                            .navSet{
+                                display: flex;
+                                gap: 35px;
+                                align-items: center;
+                                justify-content: space-between;
                             }
                         }
                     }
-                        
                 }
             }
+            .contactBtn{
+                background: orangered;
+                border-radius: 30px;
+                padding: 8px;
+
+                a{
+                    color: #fff;
+                }
+            }
+
         }
+
        
-    .address{
-        display: flex;
-        // justify-content: end;
-        flex-direction: column;
-        width: 350px;
-        position: relative;
+        .nav-container{
+            width: 100%;
+            
+            .nav{
+                width: 100%;
+                display: flex;
+                gap: 35px;
+                align-items: center;
+                justify-content: center;
 
-        .contact{
-            display: flex;
-            align-items: center;
-            gap: 1px;
-            width: fit-content;
-            position: absolute;
-            right: 0;
-            // top: 10px;
-        }
+                .wrapOuter{
+                    
+                    .span{
 
-        .sideOut{
-            display: flex;
-            justify-content: end;
-            position: absolute;
-            right: 0;
-            bottom: 5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 3px;
+                        position: relative;
+                    }
+                    
+                    .btnZ{
+                        display: none;
+                        font-size: 12px;
+                    }
+                    
+                    .navSpread{
+                        background: #2f2f2f;
+                        position: absolute;
+                        top: 20px;
+                        left: -5px;
+                        display: none;
+                        
+                        .spreader{
+                            width: 250px;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            border-bottom: 1px solid orangered;
+                        }
+                 
+                       
+                    }
+                        
+
+
+
+
+
+
+                }
+                .wrapOuter.true{
+                    position: relative;
+                    
+                    .navSpread{
+                        // background: red;
+                    }
+
+                    .spanWrap{
+                        height: 40px;
+                        width: 100%;
+
+                        .navSpread.in{
+                            display: none;
+                            position: absolute;
+                            top: 0;
+                            left: 100%;
+                        }
+
+                        &:hover{
+                            
+                            .navSpread.in{
+                                display: block;
+                            }
+                        }
+                    }
+
+
+                    &:hover{
+
+                            .navSpread{
+                                display: block;
+                                position: absolute;
+                                top: 20px;
+                                left: -5px;
+                                
+                                .spanIn{
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    gap: 3px;
+                                    width: 95%;
+                                    padding: 3px;
+
+                                
+                                    .btnQ{
+                                        transform: rotate(-90deg);
+                                    }
+
+
+                                }
+                                .spreader{
+                                    padding-left: 7px;
+
+                                    &:hover{
+                                        background: orangered;
+                                        
+                                        a{
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                              
+
+                               
+                            }
+                    }
+                }
+            }
+                
         }
-    }
+              
+          
 }
 }
 
@@ -579,27 +934,47 @@ a:hover{
 /* Swiper Goes here */
 .swiperContainer{
     width: 100%;
+    background: #fff;
     position: relative;
+
+
+// mobile
+    @media screen and (max-width: 767px) {
+        margin-top: -20px;
+        
+    }
+
+
     .swiperHead{
         .mySwiper{
+            position: relative;
             .swiperSlide{
                 width: 100%;
                 margin-top: -8vh;
             }
+            .coverImg{
+                position: absolute;
+                top: 0;
+                padding: 0;
+                bottom: 0;
+                width: 100%;
+                margin-bottom: 3px;
+                right: 0;
+                background: rgba(153, 245, 153, 0.2);
+                
+            }
                 .info{
                     position: absolute;
-                top:0;
-                background-color: $transb;
-                border-radius: 10px;
+                top:20%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 color: #fff;
                 margin: 10px;
-                h1{
+                text-transform: uppercase;
+                min-width: 250px;
+                h2{
                 max-width: 500px;
                 overflow: hidden;
-                padding-right: 5px;
-                border: 1px solid #fff;
-                border-radius: 10px;
-                margin: 5px;
                 text-wrap: balance;
                 font-family: 'Arvo', serif;
 
@@ -613,8 +988,17 @@ a:hover{
                 }
                 }
             }
+            .innerText{
+                position: absolute;
+                top: 45%;
+                color: #fff;
+                left: 50%;
+                transform: translateX(-50%);
+                min-width: 200px;
+                text-align: center;
+            }
             .centLink{
-                display: flex;
+                display: none;
                 position: absolute;
                 justify-content: center;
                 width: 100%;
@@ -1148,7 +1532,56 @@ a.activehref{
 
 
 
-
+.headerImg{
+    margin-top: -30px;
+    position: relative;
+    
+    img{
+        width: 100%;
+    }
+    .coverImg{
+        
+        position: absolute;
+        top: 0;
+        padding: 0;
+        bottom: 0;
+        width: 100%;
+        margin-bottom: 3px;
+        right: 0;
+        background: rgba(153, 245, 153, 0.2);
+        
+        
+    }
+    .coverAll{
+        position: absolute;
+        margin-left: 10px;
+        bottom: 35%;
+        z-index: 4;
+        h1{
+            text-transform: capitalize;
+            color: #fff;
+            font-size: 40px;
+            font-weight: 700;
+            background: rgb(0, 0, 0, 0.05);
+            backdrop-filter: blur(3px);
+            border-radius: 30px;
+        }
+        .line{
+            position: absolute;
+            border-top: 4px solid orangered;
+            width: 140px;
+            margin-top: -20px;
+       
+            
+        }
+        small{
+            color: #fff;
+            margin-top: -10px;
+            position: absolute;
+            font-size: 15px ;
+        }
+    }
+}
 
 
 

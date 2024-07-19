@@ -38,7 +38,7 @@ const SearchComp = ({setsState, search, setSearch}) => {
 
 
   return (
-    <>
+    <div className='searcherWrap'>
      <div className="search-bar">
       <input
         type="text"
@@ -58,7 +58,7 @@ const SearchComp = ({setsState, search, setSearch}) => {
       <BsSearch onClick={searchNow} className='icon'/>
       }
       </div>
-    </>
+    </div>
   );
 };
 

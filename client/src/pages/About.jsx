@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { fetchData } from "../postDb";
 import { useLocation } from "react-router-dom";
+import aboutImg from '../assets/staff.jpg'
 import { fetchTracker } from '../postDb'; // Import using a named import
  // Import without the file extension
 import { apiUrl } from '../config';
@@ -13,12 +14,25 @@ function About() {
     const [posts, setPosts] = useState([]);
     const [loaded, setLoaded] = useState(false);
     const [error, setError] = useState(null); // State variable for error message
-
+    const [page, setPage] = useState([])
     const location = useLocation();
 
 
+    function form(params) {
+      const path = location.search.split("?q=")[1].replace(/%20/g, ' ');
+      console.log(path);
+      if (params === "title") {
+        return path.split("&&&")[0]
+      }
+      if (params === "text") {
+        return path.split("&&&")[1]
+      }
+    }
+
   // Fetch tracking data
   useEffect(() => {
+
+
     async function fetchTrack() {
       try {
         const trackData = await fetchTracker();
@@ -65,14 +79,23 @@ function About() {
         }
         handleFetchData();
     }, []);
-
+{/* <b>Best: </b>We have top the list for over ten years  */}
     return (
         <div className="aboutPage">
             <Header />
-
+          <div className="headerImg">
+            <img src={aboutImg} alt="" />
+            <span className="coverImg"></span>
+           <div className="coverAll">
+            <h1>{form('title')}</h1>
+            <button className="line"></button>
+            <small>{form('text')}</small>
+           </div>
+          </div>
             <div className="coverAbt">
                 <div className="About">
-                    <h1>About Us</h1>
+                  {/* {form('title') === "leadership" && */}
+
                     <div className="container">
                         {error ? ( // Check if an error occurred
                             <div className="error-message">{error}</div>
@@ -89,8 +112,9 @@ function About() {
                                         </div>
                                     </div>
                                 ))
-                        )}
+                              )}
                     </div>
+                            {/* } */}
                 </div>
             </div>
             <Footer />

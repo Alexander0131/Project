@@ -6,11 +6,11 @@ import { MdLocationOn, MdMail } from 'react-icons/md'
 import {doc} from '../doc'
 import { fetchData, fetchStatic } from "../postDb"
 import { BsHeadset } from 'react-icons/bs'
-import emailjs from 'emailjs-com';
 import Loading from '../admin/components/Loading'
 import { fetchTracker } from '../postDb';
 import { apiUrl } from '../config';
 import axios from 'axios';
+import ContactPath from "../components/Contact"
 
 function Contact({ not, setNot, loading, setLoading }) {
 
@@ -24,7 +24,7 @@ function Contact({ not, setNot, loading, setLoading }) {
 useEffect(() => {
   document.title = "Contact Us";
     const handleFetchData = async () => {
-        try {
+        try { 
             const data = await fetchStatic();
             setPosts(data);
             setLoaded(true)
@@ -71,30 +71,6 @@ useEffect(() => {
 
 
  
-function sendEmail(e) {
-  e.preventDefault();
-  setLoading({load: true, loadState: "", loadText: "Sending"});
-  emailjs.sendForm('service_dozv0ck', 'template_62399ok', e.target, 'Ba88mfEJE2By2jU1N')
-    .then((result) => {
-      setLoading({load: true, loadState: "good", loadText: "Sent"});
-
-setTimeout(() => {
-    setLoading({load:false, loadState: "", loadText: "Loading..."});
-    
-            }, 2000)
-            
-      // Add any success handling here (e.g., show a success message to the user)
-    })
-    .catch((error) => {
-      setLoading({load: true, loadState: "bad", loadText: "failed"});
-
-      setTimeout(() => {
-          setLoading({load:false, loadState: "", loadText: "Loading..."});
-          
-                  }, 2000)
-      // Add error handling here (e.g., show an error message to the user)
-    });
-}
 
   return (
     <div className="contAll">
@@ -140,25 +116,13 @@ setTimeout(() => {
         </span>
       </div>
        
-    <div className="msgus" id="contact">
-{/* message us */}
-<h3>Contact Us</h3>
-<form onSubmit={sendEmail}>
-  <input type="text" name="name" placeholder="Your full name" required/><br/>
-  <input type="email" name="useremail" placeholder="youremail@gmail.com" required/><br/>
-  <input hidden type="text" onChange={e => setInpVal(e.target.value)} name="message" id="message" value={inpVal}/>
-  <textarea name="messsage" onChange={e => setInpVal(e.target.value)} htmlFor="message" rows={7} placeholder="Your text goes here" required></textarea><br/>
-  <button type="submit">Send Message</button>
-</form>
-
-    </div>
+   
 
 
 
 
 
-
-
+<ContactPath not={not} setNot loading setLoading/>
 
 
 

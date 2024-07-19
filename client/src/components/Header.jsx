@@ -9,17 +9,20 @@ import { Link, NavLink } from 'react-router-dom'
 import SearchComp from './Search'
 import { fetchStatic } from '../postDb'
 import Theme from './theme'
+import HeadSlider from './HeaderSlide'
 
 //Please note that this page is in charge of all the heading aspect of this site. and the styling of this page is located at the components.scss in the components folder.
 
 
 
-function Header() {
+function Header({slideData}) {
   const [sState, setsState] = useState(false);
+  const [sStateB, setsStateB] = useState(false);
   const [search, setSearch] = useState(false);
   const [doc, setDoc] = useState([]);
 
   useEffect(() => {
+
     async function handleFetch() {
       try {
         const data = await fetchStatic();
@@ -42,59 +45,90 @@ function Header() {
   const ctrlMenu = () => {
     if(sState === true){
    setsState(false)
-   document.body.style.overflow = "auto";
   } else{
     setsState(true)
-    document.body.style.overflow = "hidden";
     }
   }
+
+  
+  const ctrlMenuB = () => {
+    if(sStateB === true){
+   setsStateB(false)
+  } else{
+    setsStateB(true)
+    }
+  } 
    
   return (
     <div className='overall-wrap'>
     <div className='overall'>
-      <div className='inner-content'>
-       <Link to={"/"} className='logoA'>
-        <img src={logo} className='logo' alt="" />
-       </Link>  
-          <div className='mobile' onClick={ctrlMenu}>
-              {sState ? <MdClose/> : <MdMenu/>}
-          </div>
+      <div className='inner-content'> 
+          <div className='mobile'>
+            <span className='wrap'>
+
+           <span >
+            {sState ? <MdClose style={{color: 'white', fontSize: '20px', border: '2px solid white', borderRadius: '3px'}} onClick={ctrlMenu}/> : <MdMenu style={{fontSize: '20px', color: 'white'}} onClick={ctrlMenu}/>}
+            </span>   
+          <Menu place={"outer"} sState={sState} setsState={setsState}/>
+            </span>
+              <span className='span'><SearchComp search={search} setSearch={setSearch}/></span>
+
 
       </div>
-          <Navbar handOver={handOver} setsState={setsState} sState={sState}/> 
-        <div className="address">
-          <div className='contact'>
-            <p><b>Call us {doc.slice(0,3)} {doc.slice(3,6)} {doc.slice(6,10)}</b></p>
-            <Theme/>
-          </div>
-          {search === false ? (
 
-            <div className='sideOut'>
-            <div>
+      
+          {/* <Navbar handOver={handOver} setsState={setsState} sState={sState}/>  */}
+        <div className="pcHeader">
+          <span>
+            <Navbar/>
+          </span>
+          <span>
+            <SearchComp/>
+          </span>
 
-           <NavLink  onClick={handOver} className={({isActive}) => isActive ? 'activehref' : ''}
-           to="/feed"
-           >Feed</NavLink>
-           <NavLink
-           onClick={handOver} className={({isActive}) => isActive ? 'activehref' : ''}
-           to="/contact"
-           >Contact Us</NavLink>
-           </div>
-           <SearchComp search={search} setSearch={setSearch}/>
-          </div>
-          ) :
-          <div className='sideOut active'>
-          <SearchComp search={search} setSearch={setSearch}/>
-          </div>
-          }
+         
+
+         
           
         </div>
+</div>
           
-       <Menu sState={sState} setsState={setsState}/>
+{/* Begin of second face */}
 
+    <div className='wrapTwoNav'>
+      <img src={logo} alt="" />
+
+      <div className="pcHeader">
+          <span>
+            <Navbar place={'inner'}/>
+          </span>
+        </div>
+
+        <div className="mobile naver">
+        <span>
+            {sStateB ? <MdClose style={{color: '#555', fontSize: '20px', border: '2px solid white', borderRadius: '3px'}} onClick={ctrlMenuB}/> : <MdMenu style={{fontSize: '20px', color: '#555'}} onClick={ctrlMenuB}/>}
+            </span>  
+
+{sStateB && 
+            <Menu place={"inner"} sStateB={sStateB} setsStateB={setsStateB}/>
+}
+
+
+        </div>
+
+      <div className='contactBtn'>
+      <NavLink className={({isActive}) => isActive ? 'activehref' : ''} to={`/contact`}>
+          Contact Us  
+      </NavLink>
+      </div>
+
+    </div>
        
 
        </div>
+  {slideData && 
+        <HeadSlider />
+  }
        </div>
       )
 }

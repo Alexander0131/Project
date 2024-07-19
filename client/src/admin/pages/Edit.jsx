@@ -85,7 +85,6 @@ function Edit({loading, setLoading}) {
 useEffect(() => {
     document.title = "Defex - Edit page";
     async function handleFetchData(){
-         ("Searching...")
         try {
             
             const response = await axios.get(`${apiUrl}/api/upload/get`);

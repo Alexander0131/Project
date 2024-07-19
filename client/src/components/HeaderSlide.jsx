@@ -56,8 +56,12 @@ useEffect(() => {
         {posts.filter(item => item.cat === "swiper").map((a) => (
           <SwiperSlide key={a._id}>
           <img className='swiperSlide' src={a.img ? a.img : imgLoad} alt="" />
+          <span className="coverImg"></span>
           <div className="info">
-            <h1 dangerouslySetInnerHTML={{__html: a.title}}/>
+            <h2>Your projects:<br/> Our Engineering</h2>
+          </div>
+          <div className='innerText'>
+            <b dangerouslySetInnerHTML={{__html: a.title}}/>
           </div>
         </SwiperSlide>
         ))}
