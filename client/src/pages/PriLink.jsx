@@ -89,7 +89,7 @@ function PriLink() {
         {posts
           .filter(
             (item) =>
-              (item.link[0] === thirdParam && item.cat === 'child') ||
+              (item.link[0] === thirdParam && item.cat === 'sublink') ||
               (item.cat === 'board' && item.link[0] === thirdParam)
           )
           .slice(0, 1)
