@@ -312,7 +312,7 @@ deleteImg(`${itemData.img}`, idParam);
                     </div>
                    
                     <button>
-                      <Link to={`/admin/defex/edit/${a._id}?q=${idQuery}`}>
+                      <Link to={`/admin/defex/edit/${b._id}?q=${idQuery}`}>
                         <BiEdit className="icon" />
                       </Link>
                       
